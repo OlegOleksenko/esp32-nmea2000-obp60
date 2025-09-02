@@ -4,6 +4,7 @@
 #include "driver/adc.h"
 
 #define LONG_PRESS_TIME 1000
+#define MAX_BUTTONS 6
 
 class HallButtons {
 public:
@@ -32,10 +33,10 @@ private:
   float _adaptRate;
   float _filterAlpha;
 
-  float *_baseline;
-  float *_filtered;
-  float *_buttonState;
-  unsigned long *_pressStart;
+  float _baseline[MAX_BUTTONS];
+  float _filtered[MAX_BUTTONS];
+  bool _buttonState[MAX_BUTTONS];
+  unsigned long _pressStart[MAX_BUTTONS];
 
   ButtonCallback pressCallback = nullptr;
   ButtonCallback releaseCallback = nullptr;
