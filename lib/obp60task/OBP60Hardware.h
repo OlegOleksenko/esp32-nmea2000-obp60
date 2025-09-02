@@ -3,7 +3,7 @@
 
 #ifdef HARDWARE_V21
     // Direction pin for RS485 NMEA0183
-    #define OBP_DIRECTION_PIN 18
+    #define OBP_DIRECTION_PIN 8
     // I2C
     #define I2C_SPEED 10000UL       // 10kHz clock speed on I2C bus
     #define OBP_I2C_SDA 47
@@ -34,46 +34,46 @@
     // FRAM (e.g. MB85RC256V)
     #define FRAM_I2C_ADDR 0x50
     // SPI (E-Ink display, Extern Bus)
-    #define OBP_SPI_CS 39
-    #define OBP_SPI_DC 40
-    #define OBP_SPI_RST 41
-    #define OBP_SPI_BUSY 42
-    #define OBP_SPI_CLK 38
-    #define OBP_SPI_DIN 48
+    #define OBP_SPI_CS 1
+    #define OBP_SPI_DC 2
+    #define OBP_SPI_RST 42
+    #define OBP_SPI_BUSY 41
+    #define OBP_SPI_CLK 40
+    #define OBP_SPI_DIN 39
     #define SHOW_TIME 6000        // Show time in [ms] for logo and WiFi QR code
     #define FULL_REFRESH_TIME 600 // Refresh cycle time in [s][600...3600] for full display update (very important healcy function)
 
     // GPS (NEO-6M, NEO-M8N, ATGM336H)
-    #define OBP_GPS_RX 2
-    #define OBP_GPS_TX 1
+    #define OBP_GPS_RX 7
+    #define OBP_GPS_TX 3
     // 1Wire (DS18B20)
-    #define OBP_1WIRE 6         // External 1Wire
+    #define OBP_1WIRE 17         // External 1Wire
     // Buzzer
-    #define OBP_BUZZER 16
+    #define OBP_BUZZER 18
     #define TONE1 1500          // 1500Hz
     #define TONE2 2500          // 2500Hz
     #define TONE3 3500          // 3500Hz
     #define TONE4 4000          // 4000Hz
     // Analog Input
-    #define OBP_ANALOG0 4       // Analog input for voltage power supply
+    #define OBP_ANALOG0    6    // Analog input for voltage power supply
     #define MIN_VOLTAGE 10.0    // Min voltage for under voltage detection (then goto deep sleep)
     #define POWER_FAIL_TIME 2   // in [ms] Accept min voltage until 2 x 1ms (for under voltage gaps by engine start)
     // Touch buttons
-    #define TP1 14              // Left outside
-    #define TP2 13
-    #define TP3 12
+    #define TP1 46              // Left outside
+    #define TP2 45
+    #define TP3 10
     #define TP4 11
-    #define TP5 10
-    #define TP6 9               // Right outside
+    #define TP5 12
+    #define TP6 13               // Right outside
 
     // Flash LED (1x WS2812B)
     #define NUM_FLASH_LED 1         // Number of flash LED
-    #define OBP_FLASH_LED 7         // GPIO port
+    #define OBP_FLASH_LED 48         // GPIO port
     // Backlight LEDs (6x WS2812B)
     #define NUM_BACKLIGHT_LED 6     // Number of Backlight LEDs
-    #define OBP_BACKLIGHT_LED 15    // GPIO port
+    #define OBP_BACKLIGHT_LED 48    // GPIO port
     // Power Rail
-    #define OBP_POWER_50 5          // 5.0V power rail
+    #define OBP_POWER_50 48          // 5.0V power rail
 #endif
 
 // Hardware configuration for OBP40
@@ -84,7 +84,7 @@
     // I2C
     #define I2C_SPEED 100000UL       // 100kHz clock speed on I2C bus
     #define OBP_I2C_SDA 21
-    #define OBP_I2C_SCL 38
+    #define OBP_I2C_SCL 47
     // DS1388 RTC
     #define DS1388_I2C_ADDR 0x68    // Addr. 0x68
     // BME280
@@ -111,23 +111,23 @@
     // FRAM (e.g. MB85RC256V)
     #define FRAM_I2C_ADDR 0x50
     // SPI (E-Ink display, Extern Bus)
-    #define OBP_SPI_CS 45
-    #define OBP_SPI_DC 46
-    #define OBP_SPI_RST 47
-    #define OBP_SPI_BUSY 48
-    #define OBP_SPI_CLK 12
-    #define OBP_SPI_DIN 11
+    #define OBP_SPI_CS 1        //CS
+    #define OBP_SPI_DC 2        //D/C
+    #define OBP_SPI_RST 42      //RES
+    #define OBP_SPI_BUSY 41     //BUSY
+    #define OBP_SPI_CLK 40      //SCL
+    #define OBP_SPI_DIN 39      //SDA
     #define SHOW_TIME 6000        // Show time in [ms] for logo and WiFi QR code
     #define FULL_REFRESH_TIME 600 // Refresh cycle time in [s][600...3600] for full display update (very important healcy function)
     // SPI SD-Card
-    #define SD_SPI_CS GPIO_NUM_10
-    #define SD_SPI_MOSI GPIO_NUM_40
-    #define SD_SPI_CLK GPIO_NUM_39
-    #define SD_SPI_MISO GPIO_NUM_13
+    #define SD_SPI_CS GPIO_NUM_38
+    #define SD_SPI_MOSI GPIO_NUM_37
+    #define SD_SPI_CLK GPIO_NUM_36
+    #define SD_SPI_MISO GPIO_NUM_35
 
     // GPS (NEO-6M, NEO-M8N, ATGM336H)
-    #define OBP_GPS_RX 19
-    #define OBP_GPS_TX 20
+    #define OBP_GPS_RX 7
+    #define OBP_GPS_TX 3
     // 1Wire (DS18B20)
     #define OBP_1WIRE 17        // External 1Wire
     // Buzzer
@@ -137,29 +137,29 @@
     #define TONE3 3500          // 3500Hz
     #define TONE4 4000          // 4000Hz
     // Analog Input
-    #define OBP_ANALOG0 3       // Analog input for voltage power supply
+    #define OBP_ANALOG0 6       // Analog input for voltage power supply
     #define MIN_VOLTAGE 10.0    // Min voltage for under voltage detection (then goto deep sleep)
     #define POWER_FAIL_TIME 2   // in [ms] Accept min voltage until 2 x 1ms (for under voltage gaps by engine start)
     // Buttons
-    #define UP 6                // Wheel up
-    #define DOWN 4              // Wheel down
-    #define CONF 5              // Wheel press
-    #define MENUE 2             // Button top
-    #define EXIT 1              // Button bottom
+    #define UP 46                // Wheel up
+    #define DOWN 10              // Wheel down
+    #define CONF 11              // Wheel press
+    #define MENUE 12             // Button top
+    #define EXIT 13              // Button bottom
 
     // Flash LED (1x WS2812B)
     #define NUM_FLASH_LED 1         // Number of flash LED
-    #define OBP_FLASH_LED 41        // GPIO port (power LED)
+    #define OBP_FLASH_LED 48        // GPIO port (power LED)
     // Backlight LEDs (6x WS2812B)
     #define NUM_BACKLIGHT_LED 6     // Number of Backlight LEDs
-    #define OBP_BACKLIGHT_LED 41    // GPIO port (power LED)
+    #define OBP_BACKLIGHT_LED 48    // GPIO port (power LED)
     // Power Rail
-    #define OBP_POWER_50 41         // Power LED
-    #define OBP_POWER_EPD 7         // ePaper power
-    #define OBP_POWER_SD 42         // SD card power
+    #define OBP_POWER_50 48         // Power LED
+    #define OBP_POWER_EPD 4         // ePaper power
+    #define OBP_POWER_SD 5         // SD card power
     // Deep sleep wakeup
     #define OBP_WAKEUP_LEVEL 0      // //1 = High, 0 = Low, depends on switch
-    #define OBP_WAKEWUP_PIN GPIO_NUM_5// Wakeup pin, same as CONF (wheel press)
+    #define OBP_WAKEWUP_PIN GPIO_NUM_11// Wakeup pin, same as CONF (wheel press)
                                       // Must define as GPIO_NUM_X
 #endif
 

@@ -5,13 +5,13 @@
     #define USBSerial Serial
     #ifdef HARDWARE_V21
         // CAN NMEA2000
-        #define ESP32_CAN_TX_PIN 46
-        #define ESP32_CAN_RX_PIN 3
+        #define ESP32_CAN_TX_PIN 15
+        #define ESP32_CAN_RX_PIN 16
         // Bus load in 50mA steps
         #define N2K_LOAD_LEVEL 5 // 5x50mA = 250mA max bus load with back light on
         // RS485 NMEA0183
-        #define GWSERIAL_TX 17
-        #define GWSERIAL_RX 8
+        #define GWSERIAL_TX 9
+        #define GWSERIAL_RX 14
         #define GWSERIAL_MODE "UNI"
     #endif
     #ifdef BOARD_OBP40S3
